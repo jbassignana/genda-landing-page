@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Star, CheckCircle, Phone } from 'lucide-react'
+import { CheckCircle, Phone } from 'lucide-react'
 
 const FounderProgram = () => {
   const benefits = [
@@ -11,7 +11,7 @@ const FounderProgram = () => {
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-br from-green-50 via-teal-50 to-cyan-50 relative overflow-hidden">
+    <section id="programa" className="py-24 bg-gradient-to-br from-green-50 via-teal-50 to-cyan-50 relative">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMmM1NWUiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtNi42MjcgNS4zNzMtMTIgMTItMTJzMTIgNS4zNzMgMTIgMTItNS4zNzMgMTItMTIgMTItMTItNS4zNzMtMTItMTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-40" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -23,9 +23,25 @@ const FounderProgram = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-              <span className="font-semibold text-gray-800">Programa Fundador</span>
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white rounded-lg px-6 py-3 mb-6 shadow-lg relative overflow-hidden">
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+              
+              <div className="flex items-center gap-3 relative z-10">
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl font-black leading-none">20</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider opacity-90">Cupos</span>
+                </div>
+                <div className="h-12 w-px bg-white/30"></div>
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-wide opacity-90">Primeros</span>
+                  <span className="text-lg font-black leading-tight">Fundadores</span>
+                </div>
+              </div>
+              
+              {/* Decorative corner */}
+              <div className="absolute -right-1 -top-1 w-6 h-6 bg-yellow-400 rounded-bl-lg"></div>
+              <div className="absolute -right-0.5 -top-0.5 w-4 h-4 bg-yellow-300 rounded-bl-lg"></div>
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6 text-gray-900">

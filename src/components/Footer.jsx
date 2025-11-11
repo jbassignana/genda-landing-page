@@ -9,9 +9,16 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Tagline */}
           <div>
-            <h3 className="text-2xl font-display font-bold text-white mb-2">
-              Genda
-            </h3>
+            <div className="flex items-center gap-3 mb-3">
+              <img 
+                src="/Logo.png" 
+                alt="Genda Logo" 
+                className="h-8 w-auto"
+              />
+              <h3 className="text-2xl font-display font-bold text-white">
+                Genda
+              </h3>
+            </div>
             <p className="text-gray-400">
               Agendamiento con IA para profesionales
             </p>

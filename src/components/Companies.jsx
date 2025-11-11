@@ -31,7 +31,7 @@ const Companies = () => {
   }, [])
 
   return (
-    <section className="py-24 bg-white">
+    <section id="empresas" className="py-24 bg-white">
       <div className="container mx-auto px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -62,9 +62,19 @@ const Companies = () => {
                 whileHover={{ scale: 1.05 }}
                 className="group relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-green-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
-                {/* Cliente Fundador badge */}
-                <div className="absolute -top-2 -right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full shadow-md">
-                  ⭐
+                {/* Cliente Fundador ribbon badge */}
+                <div className="absolute -top-3 -right-3 transform rotate-12">
+                  <div className="relative bg-gradient-to-br from-green-600 to-teal-600 text-white px-3 py-1.5 rounded shadow-lg">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-sm font-black">FIRST</span>
+                      <span className="text-lg font-black">20</span>
+                    </div>
+                    {/* Triangle tails */}
+                    <div className="absolute -bottom-1.5 left-0 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-green-800"></div>
+                    <div className="absolute -bottom-1.5 right-0 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-teal-800"></div>
+                    {/* Gold accent */}
+                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full"></div>
+                  </div>
                 </div>
 
                 {/* Logo placeholder */}

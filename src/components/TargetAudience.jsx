@@ -7,6 +7,7 @@ import {
   Activity,
   PawPrint 
 } from 'lucide-react'
+import GeometricBackground from './GeometricBackground'
 
 const TargetAudience = () => {
   const industries = [
@@ -72,8 +73,9 @@ const TargetAudience = () => {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="publico" className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+      <GeometricBackground variant="default" />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

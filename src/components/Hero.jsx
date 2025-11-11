@@ -1,18 +1,64 @@
 import { motion } from 'framer-motion'
 import { Sparkles, Play } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import GeometricBackground from './GeometricBackground'
 
 const Hero = () => {
   const confirmedCompanies = 13
   const totalSpots = 20
   const availableSpots = totalSpots - confirmedCompanies
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const menuItems = [
+    { label: 'Características', href: '#caracteristicas' },
+    { label: 'Programa', href: '#programa' },
+    { label: 'Empresas', href: '#empresas' },
+  ]
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-white via-gray-50/50 to-white">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-green-200/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl" />
-      </div>
+    <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      {/* Geometric Background */}
+      <GeometricBackground variant="hero" />
+
+      {/* Floating Navigation Buttons - Solo visible cuando NO hay scroll */}
+      {!isScrolled && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="absolute top-8 right-12 z-20 hidden lg:flex items-center gap-4"
+        >
+          {menuItems.map((item, index) => (
+            <motion.a
+              key={item.label}
+              href={item.href}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.9 + index * 0.1 }}
+              className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-200 text-gray-700 hover:text-green-600 hover:border-green-400 hover:shadow-lg transition-all duration-300 font-medium"
+            >
+              {item.label}
+            </motion.a>
+          ))}
+          <motion.button
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2 }}
+            className="bg-gradient-primary text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            Solicitar Evaluación
+          </motion.button>
+        </motion.div>
+      )}
 
       <div className="container mx-auto px-6 lg:px-12 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Brain, MessageCircle, Smartphone, TrendingUp } from 'lucide-react'
+import GeometricBackground from './GeometricBackground'
 
 const Advantages = () => {
   const advantages = [
@@ -56,12 +57,9 @@ const Advantages = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="caracteristicas" className="py-24 bg-gradient-to-b from-white to-gray-50 relative">
       {/* Decorative background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-64 h-64 bg-green-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-10 w-64 h-64 bg-purple-100/40 rounded-full blur-3xl" />
-      </div>
+      <GeometricBackground variant="gradient" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div

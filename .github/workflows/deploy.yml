@@ -33,6 +33,14 @@ jobs:
           echo "✅ Build completed"
           ls -la dist/
       
+      - name: Verify secrets
+        run: |
+          echo "Checking if secrets are set..."
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then echo "FTP_SERVER is empty!"; exit 1; fi
+          if [ -z "${{ secrets.FTP_USERNAME }}" ]; then echo "FTP_USERNAME is empty!"; exit 1; fi
+          if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then echo "FTP_PASSWORD is empty!"; exit 1; fi
+          echo "All secrets are set!"
+      
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:

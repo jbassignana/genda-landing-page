@@ -111,7 +111,7 @@ const FounderProgram = () => {
             </motion.div>
           </motion.div>
 
-          {/* Testimonial placeholder */}
+          {/* Testimonial */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,11 @@ const FounderProgram = () => {
             className="mt-12 bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/60"
           >
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex-shrink-0" />
+              <img 
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128&h=128&fit=crop&q=80" 
+                alt="Laura M."
+                className="w-16 h-16 rounded-full object-cover flex-shrink-0 shadow-lg"
+              />
               <div>
                 <p className="text-lg text-gray-700 italic mb-3">
                   "Llevamos 2 meses usando Genda. Ahorramos 10 horas semanales y nuestros 

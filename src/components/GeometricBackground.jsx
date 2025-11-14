@@ -38,7 +38,7 @@ const GeometricBackground = ({ variant = 'default' }) => {
         size: sizes[Math.floor(Math.random() * sizes.length)],
         top: baseY,
         left: baseX,
-        duration: 10 + Math.random() * 15,
+        duration: 5 + Math.random() * 7,
         delay: Math.random() * 2,
         moveX: (Math.random() - 0.5) * 300,
         scale: 1 + Math.random() * 0.4,
@@ -60,7 +60,7 @@ const GeometricBackground = ({ variant = 'default' }) => {
       {shapes.map((shape) => (
         <motion.div
           key={shape.id}
-          className={`absolute ${shape.size} ${shape.color} blur-3xl rounded-full will-change-transform`}
+          className={`absolute ${shape.size} ${shape.color} blur-xl rounded-full will-change-transform`}
           style={{
             top: `${shape.top}%`,
             left: `${shape.left}%`,
@@ -117,7 +117,7 @@ const GeometricBackground = ({ variant = 'default' }) => {
         return (
           <motion.div
             key={`gradient-${i}`}
-            className="absolute rounded-full blur-3xl will-change-transform"
+            className="absolute rounded-full blur-xl will-change-transform"
             style={{
               width: `${gradient.size}px`,
               height: `${gradient.size}px`,

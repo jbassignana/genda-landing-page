@@ -11,9 +11,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <img 
-                src="/Logo.png" 
+                src="/logo.png" 
                 alt="Genda Logo" 
-                className="h-8 w-auto"
+                className="h-12 w-auto" 
               />
               <h3 className="text-2xl font-display font-bold text-white">
                 Genda

@@ -33,8 +33,8 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3">
             <img 
-              src="/Logo.png" 
-              alt="Genda Logo" 
+              src="/logo.png" 
+              alt="Genda Logo"
               className="h-10 w-auto"
             />
             <span className="text-2xl font-display font-bold text-gray-900">

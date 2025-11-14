@@ -7,12 +7,78 @@ const Companies = () => {
 
   // Placeholder companies (reemplazar con API call)
   const placeholderCompanies = [
-    { id: 1, name: 'Clínica Dental Sur', industry: 'Salud' },
-    { id: 2, name: 'Barber Studio', industry: 'Belleza' },
-    { id: 3, name: 'Spa Relax', industry: 'Bienestar' },
-    { id: 4, name: 'Consultorio Médico', industry: 'Salud' },
-    { id: 5, name: 'Estética & Más', industry: 'Belleza' },
-    { id: 6, name: 'Yoga Center', industry: 'Fitness' }
+    { 
+      id: 1, 
+      name: 'Clínica Dental Sonría', 
+      industry: 'Salud',
+      logo: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 2, 
+      name: 'The Barber Club', 
+      industry: 'Belleza',
+      logo: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 3, 
+      name: 'Spa Serenidad', 
+      industry: 'Bienestar',
+      logo: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 4, 
+      name: 'Dr. García Medicina', 
+      industry: 'Salud',
+      logo: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 5, 
+      name: 'Beauty Estética', 
+      industry: 'Belleza',
+      logo: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 6, 
+      name: 'Yoga & Wellness', 
+      industry: 'Fitness',
+      logo: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 7, 
+      name: 'Fisioterapia Total', 
+      industry: 'Salud',
+      logo: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 8, 
+      name: 'Nail Art Studio', 
+      industry: 'Belleza',
+      logo: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 9, 
+      name: 'Gym Power Fitness', 
+      industry: 'Fitness',
+      logo: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 10, 
+      name: 'Veterinaria Pets', 
+      industry: 'Veterinaria',
+      logo: 'https://images.unsplash.com/photo-1415369629372-26f2fe60c467?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 11, 
+      name: 'Psicología Integral', 
+      industry: 'Salud Mental',
+      logo: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=128&h=128&fit=crop&q=80'
+    },
+    { 
+      id: 12, 
+      name: 'Tattoo & Piercing', 
+      industry: 'Arte Corporal',
+      logo: 'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=128&h=128&fit=crop&q=80'
+    }
   ]
 
   useEffect(() => {
@@ -77,11 +143,13 @@ const Companies = () => {
                   </div>
                 </div>
 
-                {/* Logo placeholder */}
-                <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl font-bold text-green-600">
-                    {company.name.charAt(0)}
-                  </span>
+                {/* Logo */}
+                <div className="w-16 h-16 mx-auto mb-3 rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow">
+                  <img 
+                    src={company.logo} 
+                    alt={`${company.name} logo`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Company name */}

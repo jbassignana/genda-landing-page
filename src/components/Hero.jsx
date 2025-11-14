@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Sparkles, Play } from 'lucide-react'
 import { useState, useEffect } from 'react'
-import GeometricBackground from './GeometricBackground'
+import ParticlesBackground from './ParticlesBackground'
 
 const Hero = () => {
   const confirmedCompanies = 13
@@ -26,8 +26,8 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-b from-gray-50 via-white to-gray-50">
-      {/* Geometric Background */}
-      <GeometricBackground variant="hero" />
+      {/* Particles Background */}
+      <ParticlesBackground variant="hero" />
 
       {/* Floating Navigation Buttons - Solo visible cuando NO hay scroll */}
       {!isScrolled && (
@@ -120,13 +120,22 @@ const Hero = () => {
             >
               {/* Avatars */}
               <div className="flex -space-x-2">
-                {[...Array(8)].map((_, i) => (
-                  <div
+                {[
+                  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64&h=64&fit=crop&q=80',
+                  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=64&h=64&fit=crop&q=80'
+                ].map((src, i) => (
+                  <img
                     key={i}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-teal-500 border-2 border-white flex items-center justify-center text-xs font-semibold text-white"
-                  >
-                    {String.fromCharCode(65 + i)}
-                  </div>
+                    src={src}
+                    alt={`Usuario ${i + 1}`}
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm"
+                  />
                 ))}
               </div>
 
@@ -171,11 +180,13 @@ const Hero = () => {
                 <div className="space-y-4">
                   {/* Header */}
                   <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-                    <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white font-bold text-lg">
-                      G
-                    </div>
+                    <img 
+                      src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=80&h=80&fit=crop&q=80"
+                      alt="The Barber Shop"
+                      className="w-12 h-12 rounded-full object-cover shadow-md"
+                    />
                     <div>
-                      <h3 className="font-semibold text-gray-900">Genda Bot</h3>
+                      <h3 className="font-semibold text-gray-900">The Barber Shop</h3>
                       <p className="text-xs text-gray-500">en línea</p>
                     </div>
                   </div>
@@ -189,7 +200,7 @@ const Hero = () => {
                       className="bg-gray-100 rounded-2xl rounded-tl-sm p-4 max-w-xs"
                     >
                       <p className="text-sm text-gray-800">
-                        Hola, quiero turno para corte 💇
+                        Hola! Necesito turno con Facu 💈
                       </p>
                       <p className="text-xs text-gray-500 mt-1">10:23</p>
                     </motion.div>
@@ -201,7 +212,7 @@ const Hero = () => {
                       className="bg-gradient-primary text-white rounded-2xl rounded-tr-sm p-4 ml-auto max-w-sm"
                     >
                       <p className="text-sm">
-                        ¡Hola Sofi! 👋 Te conozco, preferís con Juan los martes a las 15h. ¿Te sirve mañana?
+                        ¡Martín! Lo de siempre mañana a las 3 como siempre? 😄
                       </p>
                       <p className="text-xs opacity-80 mt-1">10:23</p>
                     </motion.div>
@@ -213,7 +224,7 @@ const Hero = () => {
                       className="bg-gray-100 rounded-2xl rounded-tl-sm p-4 max-w-xs"
                     >
                       <p className="text-sm text-gray-800">
-                        ¡Perfecto! Anotame 🙌
+                        Dale, perfecto! 🙌
                       </p>
                       <p className="text-xs text-gray-500 mt-1">10:24</p>
                     </motion.div>

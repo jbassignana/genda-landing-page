@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <img 
-                src="/logo.png" 
+                src="/Logo.png" 
                 alt="Genda Logo" 
                 className="h-12 w-auto" 
               />

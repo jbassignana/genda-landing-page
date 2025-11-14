@@ -33,7 +33,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3">
             <img 
-              src="/logo.png" 
+              src="/Logo.png" 
               alt="Genda Logo"
               className="h-10 w-auto"
             />
